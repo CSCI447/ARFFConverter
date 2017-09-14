@@ -1,19 +1,19 @@
 @RELATION wine
 
-@ATTRIBUTE alcohol {1, 2, 3}
+@ATTRIBUTE classification {1, 2, 3}
+@ATTRIBUTE alcohol numeric
 @ATTRIBUTE "malic acid" numeric
 @ATTRIBUTE ash numeric
 @ATTRIBUTE "alcalinity of ash" numeric
 @ATTRIBUTE magnesium numeric
 @ATTRIBUTE "total phenols" numeric
 @ATTRIBUTE flavanoids numeric
-@ATTRIBUTE nonflavanoid phenols numeric
+@ATTRIBUTE "nonflavanoid phenols" numeric
 @ATTRIBUTE proanthocyanis numeric
 @ATTRIBUTE "color intensity" numeric
 @ATTRIBUTE hue numeric
 @ATTRIBUTE "OD diluted wines" numeric
 @ATTRIBUTE proline numeric
-@ATTRIBUTE classification numeric
 
 @DATA
 1,14.23,1.71,2.43,15.6,127,2.8,3.06,.28,2.29,5.64,1.04,3.92,1065
