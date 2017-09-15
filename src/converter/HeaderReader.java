@@ -51,7 +51,7 @@ public class HeaderReader {
                  */
                 else if (split[1].equalsIgnoreCase("class") || split[1].equalsIgnoreCase("category")) {
                     ClassAttribute attribute = null;
-                    System.out.println("Enter class or categorynames for " + split[0] + ", seperated by commas:");
+                    System.out.println("Enter class or categorynames for " + split[0] + ", seperated by commas with NO spaces:");
                     Scanner scanner2 = new Scanner(System.in);
                     String classes = scanner2.nextLine();
                     String[] splitClasses = classes.split(",");

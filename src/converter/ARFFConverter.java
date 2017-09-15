@@ -25,9 +25,9 @@ public class ARFFConverter {
      */
     public void convert(String filename, ArrayList<HeaderAttribute> headers){
         //Get the fileroot to use as the basename for the created ARFF file
-        String fileroot = filename.substring(filename.lastIndexOf("\\")+1);
+        String fileroot = filename.substring(filename.lastIndexOf("\\")+1, filename.lastIndexOf(".data"));
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileroot + "ARFF.txt"), "utf-8"))) { // Creates the file
+                new FileOutputStream(fileroot + ".arff"), "utf-8"))) { // Creates the file
             fr = new FileReader(filename);
             br = new BufferedReader(fr);
             /**
