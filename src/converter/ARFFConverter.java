@@ -25,18 +25,32 @@ public class ARFFConverter {
      */
     public void convert(String filename, ArrayList<HeaderAttribute> headers){
         //Get the fileroot to use as the basename for the created ARFF file
-        String fileroot = filename.substring(filename.lastIndexOf("\\")+1, filename.lastIndexOf(".data"));
+        String fileroot = filename.substring(filename.lastIndexOf("\\")+1);
+        String root = fileroot.substring(0, fileroot.lastIndexOf("."));
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileroot + ".arff"), "utf-8"))) { // Creates the file
+                new FileOutputStream(root + ".arff"), "utf-8"))) { // Creates the file
             fr = new FileReader(filename);
             br = new BufferedReader(fr);
+            String namesFilepath = filename.substring(0, filename.lastIndexOf(".")) + ".names";
+            File namefile = new File(namesFilepath);
+            if(namefile.exists()) {
+                FileReader frNames = new FileReader(namesFilepath);
+                BufferedReader brNames = new BufferedReader(frNames);
+
+                String currentLineNames;
+                while ((currentLineNames = brNames.readLine()) != null) {
+                    writer.write("%" + currentLineNames + "\n");
+                }
+                writer.write("\n");
+            }
             /**
              * The Following code writes the header of the file
              * "@RELATION" is the rootname of the file, such as "car", "iris" ...
              * "@ATTRIBUTE" are the different values in the data file, their name and type (numeric, string, class, date)
              * and extra information for types class and date
              */
-            writer.write("@RELATION " + fileroot.substring(0, fileroot.lastIndexOf(".")) +"\n\n");
+
+            writer.write("@RELATION " + root +"\n\n");
             for (HeaderAttribute h : headers) {
                 //Check if it's a date attribute, in which case the dateformat has to be added
                 if (h.getClass() == DateAttribute.class && ((DateAttribute) h).getDateFormat() != null){
