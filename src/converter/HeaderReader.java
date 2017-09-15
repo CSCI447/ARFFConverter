@@ -49,9 +49,9 @@ public class HeaderReader {
                  * Check if the attribute is of type "class", in which case the user has to input the different classes
                  * This gets saved as a ClassAttribute, which extends from HeaderAttribute
                  */
-                else if (split[1].equalsIgnoreCase("class")) {
+                else if (split[1].equalsIgnoreCase("class") || split[1].equalsIgnoreCase("category")) {
                     ClassAttribute attribute = null;
-                    System.out.println("Enter classnames for " + split[0] + ", seperated by commas:");
+                    System.out.println("Enter class or categorynames for " + split[0] + ", seperated by commas:");
                     Scanner scanner2 = new Scanner(System.in);
                     String classes = scanner2.nextLine();
                     String[] splitClasses = classes.split(",");
@@ -84,9 +84,9 @@ public class HeaderReader {
             }
             scanner.close();
             return attribute;
-        } else if (split[1].equalsIgnoreCase("class")) {
+        } else if (split[1].equalsIgnoreCase("class") || split[1].equalsIgnoreCase("category")) {
             ClassAttribute attribute = null;
-            System.out.println("Enter classnames for " + split[0] + ", seperated by commas (no spaces):");
+            System.out.println("Enter class or categorynames for " + split[0] + ", seperated by commas (no spaces):");
             Scanner scanner = new Scanner(System.in);
             String classes = scanner.nextLine();
             String[] splitClasses = classes.split(",");

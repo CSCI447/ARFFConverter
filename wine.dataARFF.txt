@@ -1,6 +1,6 @@
 @RELATION wine
 
-@ATTRIBUTE classification {1, 2, 3}
+@ATTRIBUTE class {1,2,3}
 @ATTRIBUTE alcohol numeric
 @ATTRIBUTE "malic acid" numeric
 @ATTRIBUTE ash numeric

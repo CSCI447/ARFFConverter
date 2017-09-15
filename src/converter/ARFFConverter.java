@@ -60,7 +60,7 @@ public class ARFFConverter {
                         if(i+1 == classes.length){
                             writer.write(classes[i].trim());
                         } else {
-                            writer.write(classes[i].trim() + ", ");
+                            writer.write(classes[i].trim() + ",");
                         }
                     }
                     writer.write("}\n");

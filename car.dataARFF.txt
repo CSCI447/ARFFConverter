@@ -1,12 +1,12 @@
 @RELATION car
 
-@ATTRIBUTE price {v-high, high, med, low}
-@ATTRIBUTE cost {v-high, high, med, low}
-@ATTRIBUTE doors {2, 3, 4, 5more}
-@ATTRIBUTE capacity {2, 4, more}
-@ATTRIBUTE "boot size" {small, med, big}
-@ATTRIBUTE safety {low, med, high}
-@ATTRIBUTE classification {unacc, acc, good, v-good}
+@ATTRIBUTE price {vhigh,high,med,low}
+@ATTRIBUTE cost {vhigh,high,med,low}
+@ATTRIBUTE doors {2,3,4,5more}
+@ATTRIBUTE capacity {2,4,more}
+@ATTRIBUTE "boot size" {small,med,big}
+@ATTRIBUTE safety {low,med,high}
+@ATTRIBUTE class {unacc,acc,good,vgood}
 
 @DATA
 vhigh,vhigh,2,2,small,low,unacc
